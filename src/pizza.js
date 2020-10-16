@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
 
-const Pizza = () => {
+const Pizza = ({State}) => {
 // Pizza State
+    
     const [ pizzaValues, setPizzaValues ] = useState({
         name:'',
         size:'',
@@ -83,6 +84,7 @@ const handleSubmit = (e) => {
             },
             special:'',
         });
+
       };
 
       const handleCheckboxChange = event => {
@@ -97,7 +99,10 @@ const handleSubmit = (e) => {
       }
 //
     return (
-// Form to orderx   
+        <><p>
+         {pizzaValues.name}{pizzaValues.size}
+        </p>
+<div>
         <form onSubmit={handleSubmit}>
         <div>
             <label>
@@ -171,7 +176,9 @@ const handleSubmit = (e) => {
         </div>
         <button type='submit'>Im Ready to Order</button>
         </form>
+        </div>
+        </>
     );
 };
 
-export default Pizza;
+export default Pizza;   

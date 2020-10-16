@@ -3,7 +3,6 @@ import { Route, Switch, Link } from 'react-router-dom'
 import Pizza from './pizza'
 
 const App = () => {
-  const [ pizzaOrder, setPizzaOrder ] = useState([])
   return (
     <>
     <nav>
@@ -11,10 +10,12 @@ const App = () => {
     <div><Link to ='./pizza.js'>Order Here</Link></div>
     </nav>
       <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
+      <Switch>
+      <Route path='/' component={Pizza}/>
           <div>Homepage</div>
           <Link to='./pizza'><button>Make Pizza</button></Link>
-          <Pizza />
+
+      </Switch>
     </>
   );
 };
